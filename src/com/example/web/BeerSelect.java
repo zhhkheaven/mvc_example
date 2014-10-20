@@ -15,22 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 import com.example.model.BeerExpert;
 
 public class BeerSelect  extends HttpServlet{
+	//Post function
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 	throws IOException,ServletException{
+		System.out.println("This method is doPost!");
 		String c = request.getParameter("color");
 		String [] sizes = request.getParameterValues("sizes");
-		//经过路由数
+		//Header
 		int forwards =request.getIntHeader("Max-Forwards");
-		//远程host
+		//remote host
 		String host = request.getRemoteHost();
-		//远程端口
+		//RemotePort
 		int rPort = request.getRemotePort();
-		//分配的线程端口
+		//LocalPort 
 		int lPort = request.getLocalPort();
-		//服务器端口
-		int sPort = request.getServerPort();
-		//cookies
-		Cookie [] cookies = request.getCookies();
+		//Server PORT 
+		int sPort = request.getServerPort(); 
+		//cookies 
+		Cookie [] cookies = request.getCookies(); 
 		System.out.println("lport:");
 		System.out.println(lPort);
 		System.out.println("sPort:");
@@ -39,11 +41,13 @@ public class BeerSelect  extends HttpServlet{
 		System.out.println(rPort);
 		System.out.println("host:");
 		System.out.println(host);
+		/*
 		System.out.println("cookies:");
 		for(int i=0;i<cookies.length;i++){
 			System.out.println(cookies[i].getName());
 			System.out.println(cookies[i].getValue());
 		}
+		*/
 		System.out.println("forwards:");
 		System.out.println(forwards);
 		System.out.println("sizes values:");
@@ -64,6 +68,50 @@ public class BeerSelect  extends HttpServlet{
 	    System.out.println(result);
 		RequestDispatcher view = request.getRequestDispatcher("result.jsp");
 		view.forward(request,response);
+	}
+	//Get function
+	public void doGet(HttpServletRequest request,HttpServletResponse response)
+			throws IOException,ServletException{
+		System.out.println("This method is doGet!");
+		String c = request.getParameter("color");
+		String [] sizes = request.getParameterValues("sizes");
+		//Header
+		int forwards =request.getIntHeader("Max-Forwards");
+		//remote host
+		String host = request.getRemoteHost();
+		//RemotePort
+		int rPort = request.getRemotePort();
+		//LocalPort 
+		int lPort = request.getLocalPort();
+		//Server PORT 
+		int sPort = request.getServerPort(); 
+		//cookies 
+		//Cookie [] cookies = request.getCookies(); 
+		System.out.println("lport:");
+		System.out.println(lPort);
+		System.out.println("sPort:");
+		System.out.println(sPort);
+		System.out.println("rPort:");
+		System.out.println(rPort);
+		System.out.println("host:");
+		System.out.println(host);
+		System.out.println("cookies:");
+		//System.out.println(cookies.length);
+		/*
+		if(cookies.length != 0){
+			for(int i=0;i<cookies.length;i++){
+				System.out.println(cookies[i].getName());
+				System.out.println(cookies[i].getValue());
+			}	
+		}
+		*/
+		System.out.println("forwards:");
+		System.out.println(forwards);
+		System.out.println("sizes values:");
+		for(int i=0;i<sizes.length;i++)
+			System.out.println(sizes[i]);
+		PrintWriter out = response.getWriter();
+		out.print("select color is "+c);
 	}
 
 }
