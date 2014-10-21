@@ -13,26 +13,26 @@
 				<option value="amber">amber</option>
 				<option value="brown">brown</option>
 				<option vaule="dark">dark</option>
-			</select> <br> <br>
-		Select beer weight:
+			</select> <br> <br> Select beer weight:
 		<p>
 			Body:<select name="body" size="1">
 				<option value="light">light</option>
 				<option value="medium">medium</option>
 				<option value="heavy">heavy</option>
-			</select>
-	 	Click checkbox on you needed can size：
-	 	<p>
-	 		can size:<p>
-	 		<input type=checkbox name=sizes value="12oz"> 12 oz.<br>
-	 		<input type=checkbox name=sizes value="16oz"> 16 oz.<br>
-	 		<input type=checkbox name=sizes value="22oz"> 22 oz.<br>
-	 		<br><br>
+			</select> Click checkbox on you needed can size：
+		<p>can size:
+		<p>
+			<input type=checkbox name=sizes value="12oz"> 12 oz.<br>
+			<input type=checkbox name=sizes value="16oz"> 16 oz.<br>
+			<input type=checkbox name=sizes value="22oz"> 22 oz.<br>
+			<br>
+			<br>
 		<center>
 			<input type="submit">
 		</center>
 	</form>
-	<br><br>
+	<br>
+	<br>
 	<strong>Below method used Get</strong>
 	<form method="get" action="SelectBeer.do">
 		Select beer characteristics
@@ -42,24 +42,40 @@
 				<option value="amber">amber</option>
 				<option value="brown">brown</option>
 				<option vaule="dark">dark</option>
-			</select> <br> <br>
-		Select beer weight:
+			</select> <br> <br> Select beer weight:
 		<p>
 			Body:<select name="body" size="1">
 				<option value="light">light</option>
 				<option value="medium">medium</option>
 				<option value="heavy">heavy</option>
-			</select>
-	 	Click checkbox on you needed can size：
-	 	<p>
-	 		can size:<p>
-	 		<input type=checkbox name=sizes value="12oz"> 12 oz.<br>
-	 		<input type=checkbox name=sizes value="16oz"> 16 oz.<br>
-	 		<input type=checkbox name=sizes value="22oz"> 22 oz.<br>
-	 		<br><br>
+			</select> Click checkbox on you needed can size：
+		<p>can size:
+		<p>
+			<input type=checkbox name=sizes value="12oz"> 12 oz.<br>
+			<input type=checkbox name=sizes value="16oz"> 16 oz.<br>
+			<input type=checkbox name=sizes value="22oz"> 22 oz.<br>
+			<br>
+			<br>
 		<center>
 			<input type="submit">
 		</center>
-	</form>	
+	</form>
+	<br>
+	<br> download method:
+	<p>
+	<form method="post" action="download.do">
+		please select file type you want to download: 
+		<p>
+			<select name="types" size="1">
+				<option value="txt">foo.txt</option>
+				<option value="jar">foo.jar</option>
+				<option value="unknow">foo.unknow</option>
+				<option value="error.html">error.html</option>
+				<option value="test-error.html">test-error.html</option>	
+			</select> 
+		<center>
+			<input type="submit">
+		</center>
+	</form>
 </body>
 </html>
