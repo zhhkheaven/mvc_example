@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>beer</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <servlet-name>Ch3 Beer</servlet-name>
-    <servlet-class>com.example.web.BeerSelect</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>Ch4 download</servlet-name>
-  	<servlet-class>com.example.web.CodeReturn</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Ch3 Beer</servlet-name>
-    <url-pattern>/SelectBeer.do</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Ch4 download</servlet-name>
-  	<url-pattern>/download.do</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>beer</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- 上下文中的参数全局可以使用 -->
+	<context-param>
+		<param-name>contextEmail</param-name>	
+		<param-value>contextEmail@cc.com</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>Ch3 Beer</servlet-name>
+		<servlet-class>com.example.web.BeerSelect</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Ch4 download</servlet-name>
+		<servlet-class>com.example.web.CodeReturn</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Ch3 Beer</servlet-name>
+		<url-pattern>/SelectBeer.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Ch4 download</servlet-name>
+		<url-pattern>/download.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BeerParamTests</servlet-name>
+		<servlet-class>com.example.web.TestInitParams</servlet-class>
+		<init-param>
+			<param-name>adminEmail</param-name>
+			<param-value>likewecare@wickedlysmart.com</param-value>
+		</init-param>
+		<init-param>
+			<param-name>mainEmail</param-name>
+			<param-value>blooper@wickedlysmart.com</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BeerParamTests</servlet-name>
+		<url-pattern>/Tester.do</url-pattern>
+	</servlet-mapping>
 </web-app>
