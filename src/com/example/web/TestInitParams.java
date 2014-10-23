@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.startup.ContextConfig;
+import org.apache.tomcat.util.descriptor.web.ContextResource;
 
 public class TestInitParams extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,7 +34,12 @@ public class TestInitParams extends HttpServlet {
 		out.println("<br>below view you can see the value of context:");
 		ServletContext context = getServletContext();
 		out.println(context.getInitParameter("contextEmail"));
-
-
+		out.println("<br>context parameter names:");
+		//The context parameter type is Enumeration 
+		out.println(context.getInitParameterNames().nextElement());
+		out.println("<br>server info:");
+		out.println(context.getServerInfo());
+		out.println("<br>major version:");
+		out.println(context.getMajorVersion());
 	}
 }
