@@ -64,4 +64,12 @@
 		<servlet-name>BeerParamTests</servlet-name>
 		<url-pattern>/Tester.do</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>SessionTester</servlet-name>	
+		<servlet-class>com.example.web.SessionTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SessionTester</servlet-name>	
+		<url-pattern>/SessionTester.do</url-pattern>
+	</servlet-mapping>
 </web-app>
