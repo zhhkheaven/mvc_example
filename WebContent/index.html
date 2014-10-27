@@ -86,7 +86,17 @@
 	</form>
 	<form method="post" action="SessionTester.do">
 		This is a session test method = <strong>POST</strong><p> 
-		<input type="submit" name="ddd" value="what">	
+		<input type="submit" value="POST method">	
+	</form>
+	<form method="post" action="checkcookie.do">
+		This is a cookies test method = <strong>POST</strong><p>
+		<input type="text" name="username">
+		<input type="submit" value="POST method">
+	</form>
+	<form method="get" action="checkcookie.do">
+		This is a cookies test method = <strong>GET</strong><p>	
+		<input type="text" name="username">
+		<input type="submit" value="GET method">
 	</form>
 </body>
 </html>
