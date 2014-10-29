@@ -14,23 +14,23 @@
 	</welcome-file-list>
 	<!-- 上下文中的参数全局可以使用 -->
 	<context-param>
-		<param-name>contextEmail</param-name>	
+		<param-name>contextEmail</param-name>
 		<param-value>contextEmail@cc.com</param-value>
 	</context-param>
 	<context-param>
-		<param-name>breed</param-name>	
+		<param-name>breed</param-name>
 		<param-value>Greet Dane</param-value>
 	</context-param>
 	<!-- 监听可以使sevlet在某个环节的时候出发动作 -->
 	<listener>
-		<listener-class>com.example.web.MyServletContextListener</listener-class>	
+		<listener-class>com.example.web.MyServletContextListener</listener-class>
 	</listener>
 	<servlet>
-		<servlet-name>ListenerTester</servlet-name>	
+		<servlet-name>ListenerTester</servlet-name>
 		<servlet-class>com.example.web.ListenerTester</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ListenerTester</servlet-name>	
+		<servlet-name>ListenerTester</servlet-name>
 		<url-pattern>/ListenTest.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
@@ -67,19 +67,26 @@
 		<url-pattern>/Tester.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>SessionTester</servlet-name>	
+		<servlet-name>SessionTester</servlet-name>
 		<servlet-class>com.example.web.SessionTest</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>SessionTester</servlet-name>	
+		<servlet-name>SessionTester</servlet-name>
 		<url-pattern>/SessionTester.do</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>checkcookie</servlet-name>	
+		<servlet-name>checkcookie</servlet-name>
 		<servlet-class>com.example.web.CookieTest</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>checkcookie</servlet-name>	
+		<servlet-name>checkcookie</servlet-name>
 		<url-pattern>/checkcookie.do</url-pattern>
 	</servlet-mapping>
+	<!-- sessionListener -->
+	<listener>
+		<listener-class>com.example.web.SessionCounter</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.example.web.SessionAttributeListener</listener-class>
+	</listener>
 </web-app>

@@ -16,7 +16,7 @@ public class SessionTest extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("test session attributes(get)<br>");
 		HttpSession session = request.getSession();
-
+		SessionCounter sCounter = new SessionCounter();
 		if (session.isNew()) {
 			out.println("This is a new session.<br>");
 			out.println(session.getId());
@@ -24,6 +24,8 @@ public class SessionTest extends HttpServlet {
 			out.println("Welcome back!");
 			out.println(session.getId());
 		}
+		out.println("This is session counter:<br>");
+		out.println(sCounter.getActiveSession());
 	}
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 		throws IOException,ServletException{
